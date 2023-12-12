@@ -1,85 +1,90 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import {RouterLink, RouterView} from 'vue-router'
+import HomeView from './views/HomeView.vue'
+import LoginView from "@/views/LoginView.vue";
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="app">
+    <RouterLink to="/login">login</RouterLink>
+    <RouterView style="padding-top: 60px"/>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+<style>
+.nav-bar {
+  position: center;
+  z-index: 10;
   width: 100%;
-  font-size: 12px;
+}
+
+el-menu-item {
+  height: 30px;
+}
+
+.personal-wrapper {
   text-align: center;
-  margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.personal-item {
+  cursor: pointer;
+  line-height: 40px;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.personal-item :hover {
+  background-color: #aaaaaa;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.header-logo {
+  height: 50px;
+  position: fixed;
+  left: 10px;
+  top: 5px;
+  z-index: 10;
 }
 
-nav a:first-of-type {
-  border: 0;
+.login-icon {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid 2px lightgray;
+  cursor: pointer;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.header-user {
+  position: fixed;
+  right: 30px;
+  top: 10px;
+  height: 50px;
+  line-height: 50px;
 }
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  border-bottom: solid 0.5px #42b983;
+  background-color: white;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  text-align: center;
+}
+
+a {
+  font-weight: normal;
+  color: #2c3e50;
+  text-decoration: none;
+  margin-left: 80px;
+}
+
+
 </style>
